@@ -25,8 +25,8 @@ const NavArea = () => {
                         <MenuLink variant="p" component="p">Donations</MenuLink>
                         <MenuLink variant="p" component="p">Events</MenuLink>
                         <MenuLink variant="p" component="p">Blog</MenuLink>
-                        <Button>Register</Button>
-                        <Button>Admin</Button>
+                        <Button variant="contained">Register</Button>
+                        <Button variant="contained" color="secondary">Admin</Button>
                     </MenuStack>
                 </Box>
                 <Box display={{ md: 'none', lg: 'none', xs: 'block', sm: 'block' }}>
