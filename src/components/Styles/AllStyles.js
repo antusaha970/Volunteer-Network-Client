@@ -27,6 +27,7 @@ export const MenuLink = styled(Typography)`
 
 export const ResponsiveLink = styled(MenuLink)`
     padding: 10px 10px;
+    color: #000;
 `;
 
 export const CustomTypography = styled(Typography)`
@@ -65,6 +66,8 @@ export const CustomSearch = styled('input')`
     ${props => props.theme.breakpoints.up("sm")} {
         width: 470px;
     }
+    padding: 15px;
+    box-sizing: border-box;
 `;
 
 export const CustomButton = styled(Button)`
@@ -75,4 +78,22 @@ export const CustomButton = styled(Button)`
     border-radius: 0px 8px 8px 0px;
     margin-left: -15px;
     box-shadow: none;
+`;
+
+export const CustomImage = styled('img')`
+    width: 100%;
+    height: 320px;
+    margin-bottom: -8px;
+`;
+
+export const CustomTypoForTask = styled(Typography)`
+    color: #fff;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    border-radius: 0 0 10px 10px;
+    padding: 15px 0;
 `;
