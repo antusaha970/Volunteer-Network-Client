@@ -110,13 +110,21 @@ export const Image = styled('img')`
 `;
 
 export const FormBox = styled(Box)`
-    width: 570px;
     height: 480px;
     background: #FFFFFF;
     border: 1px solid #ABABAB;
     border-radius: 4px;
     margin:auto;
     padding: 15px;
+    ${props => props.theme.breakpoints.up("xs")} {
+        width: 90%;
+    }
+    ${props => props.theme.breakpoints.up("lg")} {
+        width: 570px;
+    }
+    ${props => props.theme.breakpoints.up("md")} {
+        width: 570px;
+    }
 `;
 
 export const Input = styled('input')`

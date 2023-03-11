@@ -1,6 +1,6 @@
 import { Box, Button, Container, TextField, Typography } from '@mui/material';
 import React from 'react';
-import { CustomLabel, CustomTextField, FormBox, Image, Input, RegisterBox } from '../Styles/AllStyles';
+import { CustomLabel, FormBox, Image, Input, RegisterBox } from '../Styles/AllStyles';
 import logo from '../../logos/logo.png';
 
 
