@@ -1,10 +1,22 @@
 import { Box, Button, Container, Typography } from '@mui/material';
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { CustomLabel, FormBox, Image, Input, RegisterBox } from '../Styles/AllStyles';
 import logo from '../../logos/logo.png';
+import { useParams } from 'react-router-dom';
+import { UserInfoContext } from '../../Contexts/Context';
 
 
 const Register = () => {
+    const {id} = useParams();
+    const [userInfo, setUserInfo] = useContext(UserInfoContext);
+    const [task,setTask] = useState({});
+
+    useEffect(()=>{
+        fetch(`http://localhost:5000/getTask/${id}`)
+        .then(response => response.json())
+        .then(data => setTask(data))
+    },[id])
+
     return (
         <RegisterBox>
             <Container maxWidth='lg'>
@@ -21,15 +33,15 @@ const Register = () => {
                     </Typography>
                     <form >
                         <CustomLabel htmlFor="">Name</CustomLabel>
-                        <Input placeholder='Enter Your Name' />
+                        <Input  defaultValue={userInfo.name}  />
                         <CustomLabel htmlFor="">Email</CustomLabel>
-                        <Input placeholder='Enter Your Email' />
+                        <Input  defaultValue={userInfo.email} required />
                         <CustomLabel htmlFor="">Date</CustomLabel>
-                        <Input type="date" />
-                        <CustomLabel htmlFor="">Description</CustomLabel>
+                        <Input type="date" required />
+                        <CustomLabel htmlFor="">Description ( Optional )</CustomLabel>
                         <Input placeholder='Description' />
                         <CustomLabel htmlFor="">Task</CustomLabel>
-                        <Input />
+                        <Input defaultValue={task.workName} />
                         <Button color='primary' type="submit" variant="contained" fullWidth>Register</Button>
                     </form>
                 </FormBox>

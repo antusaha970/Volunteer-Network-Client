@@ -1,13 +1,15 @@
-import React from 'react';
-import { Navigate } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Navigate, useParams } from 'react-router-dom';
+import { IsSignedInContext } from '../../Contexts/Context';
 
 const PrivateRoute = (props) => {
     const {Component}   = props;
-    const auth = true;
+    const {id} = useParams();
+    const [isSignedIn,setIsSignedIn] = useContext(IsSignedInContext);
     return (
         <>
             {
-                auth? <Component /> : <Navigate to='/login' />
+                isSignedIn? <Component /> : <Navigate to={`/login?regId=${id}`} />
             }
         </>
     );
