@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 
 const PrivateRoute = (props) => {
     const {Component}   = props;
-    const auth = false;
+    const auth = true;
     return (
         <>
             {

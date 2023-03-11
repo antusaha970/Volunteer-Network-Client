@@ -111,7 +111,7 @@ export const Image = styled('img')`
 `;
 
 export const FormBox = styled(Box)`
-    height: 480px;
+    height: ${props => props.height}px;
     background: #FFFFFF;
     border: 1px solid #ABABAB;
     border-radius: 4px;
@@ -139,4 +139,13 @@ export const Input = styled('input')`
 export const CustomLabel = styled('label')`
     margin-bottom: 10px;
     display: block;
+`;
+
+export const LoginButton = styled(Button)`
+    background: #FFFFFF;
+    border: 1px solid #C7C7C7;
+    border-radius: 57px;
+    height: 51px;
+    width: 100%;
+    color: #000;
 `;
