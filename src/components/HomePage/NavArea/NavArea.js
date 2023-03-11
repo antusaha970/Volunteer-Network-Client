@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { LogoImg, MenuLink, MenuStack, ResponsiveLink } from '../../Styles/AllStyles';
 import logo from '../../../logos/logo.png';
 import { MenuOpen } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 const NavArea = () => {
     const [anchorElUser, setAnchorElUser] = useState(null);
@@ -21,11 +22,11 @@ const NavArea = () => {
                 <LogoImg src={logo} alt="Logo" />
                 <Box display={{ md: 'block', lg: 'block', xs: 'none', sm: 'none' }}>
                     <MenuStack direction='row' spacing={2}>
-                        <MenuLink variant="p" component="p">Home</MenuLink>
+                        <MenuLink variant="p" component="a" href="/" >Home</MenuLink>
                         <MenuLink variant="p" component="p">Donations</MenuLink>
                         <MenuLink variant="p" component="p">Events</MenuLink>
                         <MenuLink variant="p" component="p">Blog</MenuLink>
-                        <Button variant="contained">Register</Button>
+                        <Link to="/register/1"><Button variant="contained">Register</Button></Link>
                         <Button variant="contained" color="secondary">Admin</Button>
                     </MenuStack>
                 </Box>

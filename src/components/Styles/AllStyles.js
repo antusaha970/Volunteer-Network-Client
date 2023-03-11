@@ -23,6 +23,7 @@ export const MenuLink = styled(Typography)`
     line-height: 20px;
     padding-right: 25px;
     padding-top: 5px;
+    text-decoration: none;
 `;
 
 export const ResponsiveLink = styled(MenuLink)`
