@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography, TextField } from "@mui/material";
 
 export const HomeBox = styled(Box)`
     background: #F8FAFC;
@@ -96,4 +96,38 @@ export const CustomTypoForTask = styled(Typography)`
     line-height: 24px;
     border-radius: 0 0 10px 10px;
     padding: 15px 0;
+`;
+
+
+export const RegisterBox = styled(Box)`
+    width: 100%;
+    min-height: 100vh;
+    background:  #F8FAFC;
+`;
+
+export const Image = styled('img')`
+
+`;
+
+export const FormBox = styled(Box)`
+    width: 570px;
+    height: 480px;
+    background: #FFFFFF;
+    border: 1px solid #ABABAB;
+    border-radius: 4px;
+    margin:auto;
+    padding: 15px;
+`;
+
+export const Input = styled('input')`
+    outline:none;
+    width: 100%;
+    height: 38px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+`;
+export const CustomLabel = styled('label')`
+    margin-bottom: 10px;
+    display: block;
 `;

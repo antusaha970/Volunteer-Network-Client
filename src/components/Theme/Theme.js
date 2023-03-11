@@ -8,9 +8,13 @@ export const theme = createTheme({
         secondary:{
             main: '#434141'
         },
+        third:{
+            main: '#434141'
+        },
         text:{
             primary: '#fff',
-            secondary: '#fff'
+            secondary: '#fff',
+            third: '#000'
         }
     },
 });
