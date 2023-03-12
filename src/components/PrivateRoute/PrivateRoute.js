@@ -1,15 +1,21 @@
-import React, { useContext } from 'react';
+import React, { Suspense, useContext } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { IsSignedInContext } from '../../Contexts/Context';
+import LoadingScreen from '../LoadingScreen/LoadingScreen';
 
 const PrivateRoute = (props) => {
-    const {Component}   = props;
-    const {id} = useParams();
-    const [isSignedIn,setIsSignedIn] = useContext(IsSignedInContext);
+    const { Component } = props;
+    const { id } = useParams();
+    const [isSignedIn, setIsSignedIn] = useContext(IsSignedInContext);
     return (
         <>
             {
-                isSignedIn? <Component /> : <Navigate to={`/login?regId=${id}`} />
+                isSignedIn ? (
+                    <Suspense fallback={<LoadingScreen />}>
+                        <Component />
+                    </Suspense>
+                )
+                    : (<Navigate to={`/login?regId=${id}`} />)
             }
         </>
     );
