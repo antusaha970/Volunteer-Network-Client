@@ -30,6 +30,7 @@ function App() {
     <IsSignedInContext.Provider value={[isSignedIn, setIsSignedIn]}>
       <UserInfoContext.Provider value={[userInfo, setUserInfo]}>
         <RegistrationData.Provider value={[registrationData, setRegistrationData]}>
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register/:id" element={<PrivateRoute Component={Register} />} />
@@ -37,6 +38,8 @@ function App() {
           <Route path="/dashboard" element={<UserDashboard />} />
           <Route path="*" element={<NoMatch />} />
         </Routes>
+
+        
         </RegistrationData.Provider>
       </UserInfoContext.Provider>
     </IsSignedInContext.Provider>

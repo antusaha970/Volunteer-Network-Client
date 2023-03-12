@@ -4,31 +4,31 @@ import SingleTask from '../SingleTask/SingleTask';
 
 const VolunteerTaskContainer = () => {
 
-    const [volunteerTask,setVolunteerTask] = useState([]);
-    const [loading,setLoading] = useState(true);
+    const [volunteerTask, setVolunteerTask] = useState([]);
+    // const [loading,setLoading] = useState(true);
 
-    useEffect(()=>{
+    useEffect(() => {
         fetch('http://localhost:5000/allVolunteerTask')
-        .then(res => res.json())
-        .then(data => {
-            setLoading(false);
-            setVolunteerTask(data)
-        })
-    },[])
+            .then(res => res.json())
+            .then(data => {
+                // setLoading(false);
+                setVolunteerTask(data);
+            })
+    }, [])
 
 
     return (
         <Container maxWidth="lg" >
-            {
+            {/* {
                 loading && <Typography variant='h1' textAlign='center'>
                     Loading ...
                 </Typography>
-            }
-            <Grid container spacing={2} mb={5}>
-                {
-                    volunteerTask?.map(task =><SingleTask task={task} key={task._id}></SingleTask>)
-                }
-            </Grid>
+            } */}
+                <Grid container spacing={2} mb={5}>
+                    {
+                        volunteerTask?.map(task => <SingleTask task={task} key={task._id}></SingleTask>)
+                    }
+                </Grid>
         </Container>
     );
 };
