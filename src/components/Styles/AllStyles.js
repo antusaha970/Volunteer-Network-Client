@@ -158,3 +158,11 @@ export const CustomGridBox = styled(Grid)`
     border-radius: 10px;
     padding: 15px;
 `;
+
+export const CustomTextField = styled(TextField)`
+  & .MuiOutlinedInput-root {
+    &.Mui-focused fieldset {
+      border-color: #FF7044;
+    }
+  }
+`;

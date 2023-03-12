@@ -16,5 +16,5 @@ export const theme = createTheme({
             secondary: '#fff',
             third: '#000'
         }
-    },
+    }
 });

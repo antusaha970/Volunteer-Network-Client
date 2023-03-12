@@ -47,7 +47,9 @@ const NavArea = () => {
                                 <Link to="/register/1"><Button variant="contained">Register</Button></Link> :
                                 <Button variant="contained" onClick={handleSignOut}>Sign Out</Button>
                         }
-                        <Button variant="contained" color="secondary">Admin</Button>
+                        <Link to="/adminLogin">
+                            <Button variant="contained" color="secondary">Admin</Button>
+                        </Link>
                     </MenuStack>
                 </Box>
                 <Box display={{ md: 'none', lg: 'none', xs: 'block', sm: 'block' }}>
@@ -83,7 +85,9 @@ const NavArea = () => {
                                 <Button variant="contained" onClick={handleSignOut}>Sign Out</Button>
                         }
                         <br />
-                        <Button>Admin</Button>
+                        <Link to="/adminLogin">
+                            <Button variant="contained" color="secondary">Admin</Button>
+                        </Link>
                     </Menu>
                 </Box>
 
