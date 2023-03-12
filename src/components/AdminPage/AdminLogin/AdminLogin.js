@@ -56,7 +56,6 @@ const AdminLogin = () => {
                                     color: '#FF7044'
                                 }
                             }}
-                            id="outlined-basic"
                             name="email" inputRef={adminEmailRef} label="Enter admin email" variant="outlined" sx={{ input: { color: 'red' } }} fullWidth margin="normal" required />
 
                         <CustomTextField
@@ -69,7 +68,7 @@ const AdminLogin = () => {
                                     color: '#FF7044'
                                 }
                             }}
-                            id="outlined-basic" inputRef={adminPassRef} label="Enter admin password" name="password" variant="outlined" fullWidth type="password" sx={{ input: { color: 'red' } }} margin="normal" required />
+                             inputRef={adminPassRef} label="Enter admin password" name="password" variant="outlined" fullWidth type="password" sx={{ input: { color: 'red' } }} margin="normal" required />
 
                         <Button fullWidth color="secondary" type='submit' variant="contained">Login</Button>
                     </form>
