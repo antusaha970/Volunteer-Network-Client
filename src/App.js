@@ -6,18 +6,20 @@ import { AdminLoginContext, IsSignedInContext, RegistrationData, UserInfoContext
 import { lazy, Suspense } from "react";
 import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
 import PrivateRouteAdmin from "./components/PrivateRoute/PrivateRouteAdmin/PrivateRouteAdmin";
-// import AdminDashboard from "./components/AdminPage/AdminDashboard/AdminDashboard";
+
+
 
 const UserDashboard = lazy(() => import("./components/UserDashboard/UserDashboard"));
 const Register = lazy(() => import("./components/Register/Register"));
 const Login = lazy(() => import("./components/Login/Login"));
 const NoMatch = lazy(() => import("./components/NoMatch/NoMatch"));
 const AdminLogin = lazy(() => import("./components/AdminPage/AdminLogin/AdminLogin"));
-const AdminDashboard = lazy(()=> import("./components/AdminPage/AdminDashboard/AdminDashboard"));
-
+const AdminDashboard = lazy(() => import("./components/AdminPage/AdminDashboard/AdminDashboard"));
+const DataTable = lazy(() => import("./components/AdminPage/DataTable/DataTable"));
+const AddEvent = lazy(() => import("./components/AdminPage/AddEvent/AddEvent"));
 
 function App() {
-  
+
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [userInfo, setUserInfo] = useState({
     name: '',
@@ -41,6 +43,7 @@ function App() {
 
             <Routes>
               <Route path="/" element={<Home />} />
+
               <Route path="/register/:id" element={<PrivateRoute Component={Register} />}
               />
 
@@ -62,11 +65,16 @@ function App() {
                 </Suspense>
               } />
 
-              <Route path="/admin/dashboard" element={
+              <Route path="/admin" element={
                 <PrivateRouteAdmin Component={AdminDashboard} />
-              } />
+              } >
+                <Route path="addEvent" index element={<AddEvent />} />
+                <Route path="dashboard" element={<DataTable />} />
+
+              </Route>
 
               <Route path="*" element={<NoMatch />} />
+
             </Routes>
 
           </AdminLoginContext.Provider>

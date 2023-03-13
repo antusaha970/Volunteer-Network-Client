@@ -1,6 +1,7 @@
-import { Delete } from '@mui/icons-material';
 import { Box, Button, ButtonGroup, Container, Typography } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
+import { Link, Outlet } from 'react-router-dom';
+import LoadingScreen from '../../LoadingScreen/LoadingScreen';
 import './Table.css';
 
 const AdminDashboard = () => {
@@ -11,7 +12,8 @@ const AdminDashboard = () => {
         fetch('http://localhost:5000/registeredInfo')
             .then(response => response.json())
             .then(data => setRegisteredUserData(data));
-    }, [])
+    }, []);
+
     return (
         <Box>
             <Container maxWidth="lg">
@@ -25,37 +27,14 @@ const AdminDashboard = () => {
                     marginBottom: '40px'
                 }}>
                     <ButtonGroup variant="contained" >
-                        <Button>Volunteer Register List</Button>
-                        <Button>Add Event</Button>
+                        <Link to="/admin/dashboard" state={{ data: registrateduserData  }}><Button>Volunteer Register List</Button></Link>
+                        <Link to="/admin/addEvent"><Button>Add Event</Button></Link>
                     </ButtonGroup>
                 </Box>
 
-                <Box sx={{
-                    overflowX: 'auto'
-                }}>
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>Name</td>
-                                <td>Email</td>
-                                <td>Date</td>
-                                <td>Volunteering Tasks</td>
-                                <td>Action</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                registrateduserData?.map(user => <tr key={user._id}>
-                                    <td>{user.userName}</td>
-                                    <td>{user.userEmail}</td>
-                                    <td>{user.date}</td>
-                                    <td>{user.taskName.toString()}</td>
-                                    <td><Button>Delete</Button></td>
-                                </tr>)
-                            }
-                        </tbody>
-                    </table>
-                </Box>
+                <Suspense fallback={<LoadingScreen />}>
+                    <Outlet />
+                </Suspense>
 
             </Container>
         </Box>

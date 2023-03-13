@@ -25,7 +25,7 @@ const AdminLogin = () => {
         .then(result => {
             if(result){
                 setIsAdmin(true);
-                navigate('/admin/dashboard');
+                navigate('/admin/addEvent');
             }
             else{
                 alert('Invalid email or password');
