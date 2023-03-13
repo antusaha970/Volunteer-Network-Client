@@ -18,7 +18,6 @@ const Login = () => {
     const provider = new GoogleAuthProvider();
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
-    console.log(searchParams.get('regId'));
     const param = searchParams.get('regId');
 
 
