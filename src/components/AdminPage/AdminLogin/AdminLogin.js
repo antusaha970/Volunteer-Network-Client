@@ -16,7 +16,7 @@ const AdminLogin = () => {
             email: adminEmailRef.current.value,
             pass: adminPassRef.current.value
         };
-        fetch('http://localhost:5000/admin/login', {
+        fetch('https://volunteer-network-feni.cyclic.app/admin/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(verifyAdmin)

@@ -12,7 +12,7 @@ const UserDashboard = () => {
     let date = (new Date()).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
     
     useEffect(() => {
-        fetch(`http://localhost:5000/registeredUserTask/${registrationData.userEmail}`)
+        fetch(`https://volunteer-network-feni.cyclic.app/registeredUserTask/${registrationData.userEmail}`)
             .then(response => response.json())
             .then(data => {
                 setDashboardData(data.taskName);

@@ -19,7 +19,7 @@ const Register = () => {
     const taskRef = useRef();
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/getTask/${id}`)
+        fetch(`https://volunteer-network-feni.cyclic.app/getTask/${id}`)
         .then(response => response.json())
         .then(data => {
             setTask(data);
@@ -37,7 +37,7 @@ const Register = () => {
         }
         setRegistrationData(registerInfo);
 
-        fetch('http://localhost:5000/sendRegistrationInfo', {
+        fetch('https://volunteer-network-feni.cyclic.app/sendRegistrationInfo', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

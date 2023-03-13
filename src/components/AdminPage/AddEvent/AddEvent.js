@@ -20,7 +20,7 @@ const AddEvent = () => {
             bgCode: bgCodeRef.current.value,
             picture: 'ITHelp.png'        
         }
-        fetch('http://localhost:5000/addVolunteerTask',{
+        fetch('https://volunteer-network-feni.cyclic.app/addVolunteerTask',{
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(eventDetails)

@@ -1,7 +1,7 @@
 import { Box, Button, Grid, Stack, Typography } from '@mui/material';
 import React from 'react';
 import pic from '../../../images/extraVolunteer.png';
-import { CustomGridBox, Image } from '../../Styles/AllStyles';
+import { CustomGridBox, Image2 } from '../../Styles/AllStyles';
 
 const SingleDashboardTask = ({data,date}) => {
     return (
@@ -10,7 +10,7 @@ const SingleDashboardTask = ({data,date}) => {
                 <Box flex={1} sx={{
                     margin:{xs:"auto"}
                 }}>
-                    <Image src={pic} alt="Hands of help" width="180px" />
+                    <Image2 src={pic} alt="Hands of help" width="180px" />
                 </Box>
                 <Box flex={1}>
                    <Typography variant='h5' component='p'>

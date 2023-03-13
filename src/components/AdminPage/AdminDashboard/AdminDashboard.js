@@ -9,7 +9,7 @@ const AdminDashboard = () => {
     const [registrateduserData, setRegisteredUserData] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/registeredInfo')
+        fetch('https://volunteer-network-feni.cyclic.app/registeredInfo')
             .then(response => response.json())
             .then(data => setRegisteredUserData(data));
     }, []);

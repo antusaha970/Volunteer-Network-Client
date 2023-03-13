@@ -107,7 +107,15 @@ export const RegisterBox = styled(Box)`
 `;
 
 export const Image = styled('img')`
-    /* width: 100%; */
+    height: 100%;
+    ${props => props.theme.breakpoints.up("xs")} {
+        width: 100%;
+    }
+    ${props => props.theme.breakpoints.up("lg")} {
+        width: 609px;
+    }
+`;
+export const Image2 = styled('img')`
     height: 100%;
 `;
 

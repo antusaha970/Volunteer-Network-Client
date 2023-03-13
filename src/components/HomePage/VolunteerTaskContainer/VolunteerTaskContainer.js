@@ -5,13 +5,13 @@ import SingleTask from '../SingleTask/SingleTask';
 const VolunteerTaskContainer = () => {
 
     const [volunteerTask, setVolunteerTask] = useState([]);
-    // const [loading,setLoading] = useState(true);
+    const [loading,setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:5000/allVolunteerTask')
+        fetch('https://volunteer-network-feni.cyclic.app/allVolunteerTask')
             .then(res => res.json())
             .then(data => {
-                // setLoading(false);
+                setLoading(false);
                 setVolunteerTask(data);
             })
     }, [])
@@ -19,11 +19,11 @@ const VolunteerTaskContainer = () => {
 
     return (
         <Container maxWidth="lg" >
-            {/* {
+            {
                 loading && <Typography variant='h1' textAlign='center'>
                     Loading ...
                 </Typography>
-            } */}
+            }
                 <Grid container spacing={2} mb={5}>
                     {
                         volunteerTask?.map(task => <SingleTask task={task} key={task._id}></SingleTask>)
