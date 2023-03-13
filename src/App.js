@@ -68,6 +68,7 @@ function App() {
               <Route path="/admin" element={
                 <PrivateRouteAdmin Component={AdminDashboard} />
               } >
+                
                 <Route path="addEvent" index element={<AddEvent />} />
                 <Route path="dashboard" element={<DataTable />} />
 

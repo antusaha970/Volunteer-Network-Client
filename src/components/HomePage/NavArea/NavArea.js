@@ -4,7 +4,7 @@ import { LogoImg, MenuLink, MenuStack, ResponsiveLink } from '../../Styles/AllSt
 import logo from '../../../logos/logo.png';
 import { MenuOpen } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
-import { IsSignedInContext } from '../../../Contexts/Context';
+import { IsSignedInContext, RegistrationData } from '../../../Contexts/Context';
 import { getAuth, signOut } from "firebase/auth";
 
 const NavArea = () => {
@@ -13,7 +13,7 @@ const NavArea = () => {
     const handleOpenUserMenu = (event) => {
         setAnchorElUser(event.currentTarget);
     };
-
+    const [registrationData, setRegistrationData] = useContext(RegistrationData);
 
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
@@ -41,7 +41,12 @@ const NavArea = () => {
                         }}>Home</Link></MenuLink>
                         <MenuLink variant="p" component="p">Donations</MenuLink>
                         <MenuLink variant="p" component="p">Events</MenuLink>
-                        <MenuLink variant="p" component="p">Blog</MenuLink>
+                        {
+                            registrationData.userEmail ? (<MenuLink variant="p" component="p" ><Link to='/dashboard' style={{
+                                textDecoration: 'none',
+                            }}>Dashboard</Link></MenuLink>) :
+                            (<ResponsiveLink variant="p" component="p">Blog</ResponsiveLink>)
+                        }
                         {
                             !isSignedIn ?
                                 <Link to="/register/1"><Button variant="contained">Register</Button></Link> :
@@ -78,7 +83,12 @@ const NavArea = () => {
                         }}>Home</Link></ResponsiveLink>
                         <ResponsiveLink variant="p" component="p">Donations</ResponsiveLink>
                         <ResponsiveLink variant="p" component="p">Events</ResponsiveLink>
-                        <ResponsiveLink variant="p" component="p">Blog</ResponsiveLink>
+                        {
+                            registrationData.userEmail ? (<MenuLink variant="p" component="p" ><Link to='/dashboard' style={{
+                                textDecoration: 'none',
+                            }}>Dashboard</Link></MenuLink>) :
+                            (<ResponsiveLink variant="p" component="p">Blog</ResponsiveLink>)
+                        }
                         {
                             !isSignedIn ?
                                 <Link to="/register/1"><Button variant="contained">Register</Button></Link> :
