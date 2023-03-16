@@ -2,19 +2,9 @@ import { Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import SingleTask from '../SingleTask/SingleTask';
 
-const VolunteerTaskContainer = () => {
+const VolunteerTaskContainer = ({volunteerTask,loading}) => {
 
-    const [volunteerTask, setVolunteerTask] = useState([]);
-    const [loading,setLoading] = useState(true);
-
-    useEffect(() => {
-        fetch('https://volunteer-network-feni.cyclic.app/allVolunteerTask')
-            .then(res => res.json())
-            .then(data => {
-                setLoading(false);
-                setVolunteerTask(data);
-            })
-    }, [])
+    
 
 
     return (
